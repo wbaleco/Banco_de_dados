@@ -1,0 +1,227 @@
+USE ALMOXARIFADO
+
+GO
+---------------------INSERT NA TABELA CLIENTE------------------------
+
+INSERT INTO Cliente
+VALUES (1,'Av. Ana Costa 200','HK Lowell',39757356000100,'33012054')
+GO
+
+INSERT INTO Cliente
+VALUES (2,'Av. Pinheiro Machado','HK Lowell Unidade2',28972112000123,'332158698')
+GO
+
+INSERT INTO Cliente
+VALUES (3,'Av. Conselheiro Nebias','HK Lowell Unidade3',24611086000157,'33012589')
+GO
+
+INSERT INTO Cliente
+VALUES (4,'Av.Carvalho de Mendonça','HK Lowell Unidade4',27022824000119,'35612559')
+GO
+
+INSERT INTO Cliente
+VALUES (5,'Av. Senador Feijó','HK Lowell Unidade5',64489578000136,'33615859')
+
+------------------------INSERT NA TABELA ENTREGA----------------------
+GO
+
+INSERT INTO Entrega 
+VALUES (1,5,'2015-02-10')
+GO
+INSERT INTO Entrega 
+VALUES (5,4,'2015-03-11')
+GO
+INSERT INTO Entrega 
+VALUES (5,2,'2015-03-11')
+GO
+INSERT INTO Entrega 
+VALUES (5,3,'2015-03-11')
+GO
+INSERT INTO Entrega 
+VALUES (5,3,'2015-03-11')
+
+GO
+
+----------------------INSERT NA TABELA ENTREGAPECA-------------------------------
+
+INSERT INTO EntregaPeca
+VALUES (1,1,1,1)
+
+GO
+
+INSERT INTO EntregaPeca
+VALUES (2,2,2,2)
+
+GO
+
+INSERT INTO EntregaPeca
+VALUES (3,3,3,3)
+
+GO
+
+INSERT INTO EntregaPeca
+VALUES (4,4,4,4)
+
+GO
+
+INSERT INTO EntregaPeca
+VALUES (5,5,5,5)
+
+GO
+
+----------------------INSERT NA TABELA FORNECEDOR-------------------------------
+INSERT INTO Fornecedor
+VALUES (1,'Casa das ferramentas')
+
+GO
+INSERT INTO Fornecedor
+VALUES (2,'Parafusos e Porcas SA')
+
+GO
+INSERT INTO Fornecedor
+VALUES (3,'Casa Simões ltda')
+
+GO
+INSERT INTO Fornecedor
+VALUES (4,'Casa & Cia')
+
+GO
+INSERT INTO Fornecedor
+VALUES (5,'Telha Sul ltda')
+GO
+------------------INSERT NA TABELA ITEMORDEMCOMPRA----------------------
+INSERT INTO ItemOrdemCompra 
+VALUES (1,1,1)
+GO
+
+INSERT INTO ItemOrdemCompra 
+VALUES (2,2,2)
+GO
+
+INSERT INTO ItemOrdemCompra 
+VALUES (3,3,3)
+GO
+
+INSERT INTO ItemOrdemCompra 
+VALUES (4,4,4)
+GO
+
+INSERT INTO ItemOrdemCompra 
+VALUES (5,5,5)
+GO
+
+
+----------------------INSERT NA TABELA ITEMPEDIDO-------------------------------
+
+INSERT INTO ItemPedido
+VALUES (1,1,1,10)
+GO
+
+INSERT INTO ItemPedido
+VALUES (2,2,2,50)
+GO
+
+INSERT INTO ItemPedido
+VALUES (3,3,3,10)
+
+GO
+
+INSERT INTO ItemPedido
+VALUES (4,4,4,5)
+GO
+
+INSERT INTO ItemPedido
+VALUES (5,2,4,5)
+
+
+----------------------INSERT NA TABELA ORDEMCOMPRA-------------------------------
+
+INSERT INTO OrdemCompra
+VALUES (1,2,3,2,'2015-01-03')
+GO
+
+INSERT INTO OrdemCompra
+VALUES (2,3,4,1,'2015-02-09')
+GO
+
+INSERT INTO OrdemCompra
+VALUES (3,4,5,3,'2015-03-10')
+GO
+
+INSERT INTO OrdemCompra
+VALUES (4,5,2,4,'2015-04-03')
+GO
+INSERT INTO OrdemCompra
+VALUES (5,5,2,4,'2015-05-09')
+GO
+
+
+
+----------------------INSERT NA TABELA PECA-------------------------------
+
+INSERT INTO Peca
+VALUES (1,2,123,'Parafuso',10,2,2.00)
+GO
+
+INSERT INTO Peca
+VALUES (2,3,124,'Arruela',20,6,1.00)
+GO
+
+INSERT INTO Peca
+VALUES (3,4,125,'Retentor',15,5,25.00)
+GO
+
+INSERT INTO Peca
+VALUES (4,4,125,'Junta',15,5,25.00)
+GO
+
+INSERT INTO Peca
+VALUES (5,5,126,'Rolamento',10,10,35.00)
+GO
+
+----------------------INSERT NA TABELA DISTRIBUICAO-------------------------------
+
+INSERT INTO Pedido
+VALUES (1,2,5,4,4,'2015-02-12')
+GO
+
+INSERT INTO Pedido
+VALUES (2,2,5,4,4,'2015-02-12')
+GO
+
+INSERT INTO Pedido
+VALUES (3,2,5,4,4,'2015-02-12')
+GO
+
+INSERT INTO Pedido
+VALUES (4,3,5,4,4,'2015-03-10')
+GO
+
+INSERT INTO Pedido
+VALUES (5,1,5,4,4,'2015-03-02')
+GO
+
+
+----------------------INSERT NA TABELA RECEPTACULO-------------------------------
+
+INSERT INTO Receptaculo
+VALUES (1,2,25)
+GO
+
+INSERT INTO Receptaculo
+VALUES (2,3,30)
+GO
+
+INSERT INTO Receptaculo
+VALUES (3,4,15)
+GO
+
+INSERT INTO Receptaculo
+VALUES (4,5,10)
+GO
+
+INSERT INTO Receptaculo
+VALUES (5,6,18)
+
+
+
