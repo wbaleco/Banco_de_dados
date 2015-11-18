@@ -1,0 +1,187 @@
+CREATE DATABASE ALMOXARIFADO
+GO 
+USE ALMOXARIFADO
+GO
+CREATE TABLE ItemOrdemCompra(
+	cd_itemOrdemCompra int not null,
+	cd_ordemCompra int not null,
+	cd_peca int not null,
+
+)
+GO
+ALTER TABLE ItemOrdemCompra
+ADD PRIMARY KEY (cd_itemOrdemCompra)
+GO
+
+CREATE TABLE ItemPedido(
+	cd_itemPedido int not null,
+	cd_pedido int not null,
+	cd_peca int not null,
+	qt_itemPedido int
+)
+GO
+ALTER TABLE ItemPedido
+ADD PRIMARY KEY(cd_itemPedido)
+GO
+
+CREATE TABLE Peca(
+	cd_peca int not null,
+	cd_receptaculo int not null,
+	nr_upcPeca varchar(11),
+	ds_peca varchar(40),
+	qt_minima int,
+	qt_estocada int,
+	vl_peca int,
+)
+GO
+ALTER TABLE Peca
+ADD PRIMARY KEY (cd_peca)
+
+GO
+
+CREATE TABLE Receptaculo(
+	cd_receptaculo int not null,
+	nr_corredor int,
+	qt_estocada int 
+)
+GO
+ALTER TABLE Receptaculo
+ADD PRIMARY KEY (cd_receptaculo)
+GO
+CREATE TABLE EntregaPeca(
+	cd_entregaPeca int not null,
+	cd_entrega int not null,
+	cd_peca int not null,
+	cd_fornecedor int not null,
+	
+	)
+GO 
+ALTER TABLE EntregaPeca
+ADD PRIMARY KEY (cd_EntregaPeca)
+GO
+
+CREATE TABLE OrdemCompra(
+	cd_ordemCompra int not null,
+	cd_peca int not null,
+	qt_peca int not null,
+	cd_fornecedor int not null,
+	dt_ordemCompra datetime,
+	)
+GO
+	ALTER TABLE OrdemCompra
+	ADD PRIMARY KEY (cd_ordemCompra)
+GO
+
+CREATE TABLE Fornecedor(
+	cd_fornecedor int not null,
+	nm_fornecedor varchar(70),
+		)
+GO
+ALTER TABLE Fornecedor
+ADD PRIMARY KEY (cd_fornecedor)
+GO
+CREATE TABLE Pedido(
+	cd_pedido int not null,
+	cd_peca int not null,
+	qt_pedido int null,
+	cd_receptaculo int not null,
+	cd_cliente int not null,
+	dt_pedido datetime null
+	)
+
+GO
+ALTER TABLE Pedido
+ADD PRIMARY KEY (cd_pedido)
+
+GO
+
+CREATE TABLE Cliente(
+	cd_cliente int not null,
+	ds_endereço varchar (70) not null,
+	nm_cliente varchar(70),
+	nr_cnpj numeric,
+	nr_telefone int,
+	)
+go
+ALTER TABLE Cliente
+ADD PRIMARY KEY (cd_cliente)
+
+GO
+
+CREATE TABLE Entrega(
+	cd_entrega int not null,
+	qt_entrega int not null,
+	dt_entrega datetime null
+	)
+go
+ALTER TABLE ENTREGA
+ADD PRIMARY KEY (cd_entrega)
+GO
+
+ALTER TABLE OrdemCompra
+ADD FOREIGN KEY (cd_fornecedor)
+REFERENCES Fornecedor
+
+GO
+ALTER TABLE OrdemCompra
+ADD FOREIGN KEY (cd_peca)
+REFERENCES Peca
+
+GO
+
+ALTER TABLE ItemOrdemCompra
+ADD FOREIGN KEY (cd_OrdemCompra)
+REFERENCES OrdemCompra
+
+GO
+ALTER TABLE ItemOrdemCompra
+ADD FOREIGN KEY (cd_peca)
+REFERENCES Peca
+
+GO
+ALTER TABLE Peca
+ADD FOREIGN KEY (cd_receptaculo)
+REFERENCES Receptaculo
+
+GO
+
+ALTER TABLE Pedido
+ADD FOREIGN KEY (cd_peca)
+REFERENCES Peca
+
+GO
+ALTER TABLE Pedido
+ADD FOREIGN KEY (cd_receptaculo)
+REFERENCES Receptaculo
+
+GO
+ALTER TABLE Pedido
+ADD FOREIGN KEY (cd_cliente)
+REFERENCES Cliente
+
+GO
+ALTER TABLE ItemPedido
+ADD FOREIGN KEY (cd_peca)
+REFERENCES Peca
+
+GO
+ALTER TABLE ItemPedido
+ADD FOREIGN KEY (cd_pedido)
+REFERENCES Pedido
+
+GO
+ALTER TABLE EntregaPeca
+ADD FOREIGN KEY (cd_peca)
+REFERENCES Peca
+
+GO
+ALTER TABLE EntregaPeca
+ADD FOREIGN KEY (cd_fornecedor)
+REFERENCES Fornecedor
+
+GO
+
+ALTER TABLE EntregaPeca
+ADD FOREIGN KEY (cd_entrega)
+REFERENCES Entrega
+
